@@ -3,31 +3,21 @@
   "manifest_version": 3,
   "version": "0.1.0",
   "description": "test",
-  "permissions": [
-    "tabs",
-    "activeTab",
-    "cookies",
-    "scripting"
-  ],
-  "host_permissions": [
-  ],
+  "permissions": ["tabs", "activeTab", "cookies", "scripting"],
+  "host_permissions": [],
   "icons": {
     "16": "icon/icon.png"
   },
   "background": {
-    "service_worker": "background.js"
+    "service_worker": "./js/background.js"
   },
   "action": {
     "default_popup": "popup.html"
   },
   "content_scripts": [
     {
-      "matches": [
-        "https://fuwu.taobao.com/*"
-      ],
-      "js": [
-        "content.js"
-      ],
+      "matches": ["https://fuwu.taobao.com/*"],
+      "js": ["./js/content.js"],
       "run_at": "document_start"
     }
   ]
